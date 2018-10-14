@@ -14,6 +14,7 @@ export class DatatableComponent implements OnInit {
   index: number;
   currentPage = 0;
   totalItems: number;
+  response: object;
 
   constructor(private httpService: HttpService) {
   }
@@ -21,7 +22,8 @@ export class DatatableComponent implements OnInit {
   ngOnInit() {
     const params = {};
     this.httpService.queryUser(params).subscribe((res: Response) => {
-      this.allArray = res.result.userList;
+      this.response = res;
+      this.allArray = this.response['result'].userList;
       for (let i = 0; i < 10 ; i++) {
         if ((this.currentPage * 10 + i) === this.totalItems) {
           break;
