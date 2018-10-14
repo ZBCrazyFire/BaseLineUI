@@ -38,21 +38,17 @@ npm run build
 killPort
 
 #删除原有工程
-#rm -rf $TOMCAT_APP_PATH/webapps/ROOT
-#rm -rf $TOMCAT_APP_PATH/webapps/ROOT.war
-#rm -rf $TOMCAT_APP_PATH/webapps/roder.war
-rm -rf $WORK_PATH/BaseLine.jar
+rm -rf $WORK_PATH/webapps/BaseLine
 
 
 #复制新的工程
 #cp $PROJ_PATH/order/target/order.war $TOMCAT_APP_PATH/webapps/
-cp $PROJ_PATH/BaseLineSvr/target/BaseLine-0.0.1-SNAPSHOT.jar $WORK_PATH/
+cp $PROJ_PATH/BaseLineUI/dist $WORK_PATH/webapps/
 
-cd $WORK_PATH/
+cd $WORK_PATH/webapps/
 #mv order.war ROOT.war
-mv BaseLine-0.0.1-SNAPSHOT.jar BaseLine.jar
+mv dist BaseLine
 
 #启动tomcat
-cd $WORK_PATH/
-#sh bin/startup.sh
-java -jar BaseLine.jar --server.port=8081 log.out 2>&1 &
+cd $WORK_PATH/bin/
+sh bin/startup.sh
