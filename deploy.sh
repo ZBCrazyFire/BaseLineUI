@@ -32,6 +32,7 @@ killPort()
 
 cd $PROJ_PATH/BaseLineUI
 echo "$PROJ_PATH"
+npm install
 npm run build
 
 #停止tomcat
