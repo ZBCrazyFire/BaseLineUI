@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import {HttpService} from './share/http.service';
 import { HttpClientModule } from '@angular/common/http';
+import {HashLocationStrategy , LocationStrategy} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     PaginationModule.forRoot()
   ],
-  providers: [HttpService],
+  providers: [HttpService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
