@@ -39,7 +39,7 @@ npm run build
 killPort
 
 #删除原有工程
-rm -rf $WORK_PATH/webapps/BaseLine
+rm -rf $WORK_PATH/webapps/BaseLine/*
 
 
 #复制新的工程
