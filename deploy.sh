@@ -48,5 +48,5 @@ cp -r $PROJ_PATH/BaseLineUI/dist/. $WORK_PATH/webapps/BaseLine
 
 
 #启动tomcat
-cd $WORK_PATH/bin/
+cd $WORK_PATH
 sh bin/startup.sh
