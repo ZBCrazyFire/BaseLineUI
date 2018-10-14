@@ -44,7 +44,7 @@ rm -rf $WORK_PATH/webapps/BaseLine
 
 #复制新的工程
 #cp $PROJ_PATH/order/target/order.war $TOMCAT_APP_PATH/webapps/
-cp $PROJ_PATH/BaseLineUI/dist $WORK_PATH/webapps/
+cp -r $PROJ_PATH/BaseLineUI/dist/. $WORK_PATH/webapps/
 
 cd $WORK_PATH/webapps/
 #mv order.war ROOT.war
