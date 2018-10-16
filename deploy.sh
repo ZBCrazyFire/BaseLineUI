@@ -49,4 +49,5 @@ cp -r $PROJ_PATH/BaseLineUI/dist/. $WORK_PATH/html/BaseLine
 
 #启动tomcat
 cd $WORK_PATH/sbin
-nginx -s reload
+./nginx -s reload
+
