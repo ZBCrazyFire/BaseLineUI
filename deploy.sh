@@ -32,7 +32,7 @@ killPort()
 
 cd $PROJ_PATH/BaseLineUI
 echo "$PROJ_PATH"
-npm install
+npm install --unsafe-perm
 npm run build
 
 #停止tomcat(因为用nginx部署就不用tomcat了)
