@@ -35,8 +35,8 @@ echo "$PROJ_PATH"
 npm install
 npm run build
 
-#停止tomcat
-killPort
+#停止tomcat(因为用nginx部署就不用tomcat了)
+#killPort
 
 #删除原有工程
 rm -rf $WORK_PATH/webapps/BaseLine/*
@@ -44,9 +44,9 @@ rm -rf $WORK_PATH/webapps/BaseLine/*
 
 #复制新的工程
 #cp $PROJ_PATH/order/target/order.war $TOMCAT_APP_PATH/webapps/
-cp -r $PROJ_PATH/BaseLineUI/dist/. $WORK_PATH/webapps/BaseLine
+cp -r $PROJ_PATH/BaseLineUI/dist/. $WORK_PATH/html/BaseLine
 
 
 #启动tomcat
-cd $WORK_PATH
-sh bin/startup.sh
+cd $WORK_PATH/sbin
+sh ./nginx -s reload
