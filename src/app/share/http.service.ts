@@ -10,32 +10,10 @@ export class HttpService {
 
   constructor(private httpclient: HttpClient) {
   }
-  healthyCheck() {
-    return this.httpclient.get(this.baseUrl + '/check/healthy');
-  }
   queryUser(params) {
-    return this.httpclient.post(this.baseUrl + '/query/user', params
-    );
+    return this.httpclient.post(this.baseUrl + '/query/user', params);
   }
-  sendgetHttp() {
-    return this.httpclient.get(this.baseUrl + '/getdata/');
-  }
-
-  loginHttp(studentName, password) {
-    const params = {
-      'studentName': studentName,
-      'password': password
-    };
-    return this.httpclient.get(this.baseUrl + '/login', {
-      params: params
-    });
-  }
-  addStudent(studentName, password) {
-    const params = {
-      'studentName': studentName,
-      'password': password
-    };
-    return this.httpclient.post(this.baseUrl + '/addStudent', params
-    );
+  deleteUser(options) {
+    return this.httpclient.delete(this.baseUrl + '/delete/user', options);
   }
 }

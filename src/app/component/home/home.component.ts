@@ -9,11 +9,7 @@ import {HttpService} from '../../share/http.service';
 export class HomeComponent implements OnInit {
 
   constructor(private httpService: HttpService) { }
-  data: object;
   ngOnInit() {
-   this.httpService.healthyCheck().subscribe((res: Response) => {
-     this.data = res;
-   });
   }
 
 }
