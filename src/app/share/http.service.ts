@@ -16,4 +16,10 @@ export class HttpService {
   deleteUser(options) {
     return this.httpclient.delete(this.baseUrl + '/delete/user', options);
   }
+  login(params) {
+    return this.httpclient.post(this.baseUrl + '/user/login', params);
+  }
+  rejestration(params) {
+    return this.httpclient.post(this.baseUrl + '/add/user', params);
+  }
 }

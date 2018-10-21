@@ -1,0 +1,27 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" (click)="close()">×</button>
+      <h4 class="modal-title">{{title}}</h4>
+    </div>
+    <div class="modal-body">
+      <div>
+        <div style="position: center">
+          <span style="width: 10%">UserName :</span>
+          <input style="width: 75%;margin-right: 5%;float: right" [(ngModel)]="name" type="text">
+        </div>
+
+        <p></p>
+        <div>
+          <span style="width: 10%">Password :</span>
+          <input style="width: 75%;margin-right: 5%;float: right" [(ngModel)]="password" type="password">
+        </div>
+
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="rejestration()">注册</button>
+      <button type="button" class="btn btn-default" (click)="login()">登录</button>
+    </div>
+  </div>
+</div>

@@ -11,20 +11,31 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
 import {HttpService} from './share/http.service';
 import { HttpClientModule } from '@angular/common/http';
 import {HashLocationStrategy , LocationStrategy} from '@angular/common';
+import { LoginComponent } from './component/login/login.component';
+import { BootstrapModalModule } from 'ngx-bootstrap-modal';
+import { RejestrationComponent } from './component/login/rejestration/rejestration.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavigateComponent,
     ScheduleComponent,
-    DatatableComponent
+    DatatableComponent,
+    LoginComponent,
+    RejestrationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    BootstrapModalModule,
     PaginationModule.forRoot()
+  ],
+  entryComponents: [
+    LoginComponent,
+    RejestrationComponent
   ],
   providers: [HttpService, , {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
