@@ -6,8 +6,9 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-left">
         <li><a [routerLink]="['home']">Home</a></li>
-        <li><a [routerLink]="['schedule']">Schedule</a></li>
-        <li><a [routerLink]="['datatable']">DataTable</a></li>
+        <li><a [routerLink]="['schedule']" *ngIf="logflag">Schedule</a></li>
+        <li><a [routerLink]="['datatable']" *ngIf="logflag">DataTable</a></li>
+        <li><a [routerLink]="['map']" *ngIf="logflag">Map</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a (click)="login()" *ngIf="!logflag">Login</a></li>

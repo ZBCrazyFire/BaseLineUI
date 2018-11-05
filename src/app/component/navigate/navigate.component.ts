@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {DialogService} from 'ngx-bootstrap-modal';
 import {LoginComponent} from '../login/login.component';
+import {TokenService} from '../../share/token.service';
 
 @Component({
   selector: 'app-navigate',
@@ -11,7 +12,7 @@ export class NavigateComponent implements OnInit {
   logflag: boolean;
   result: object;
 
-  constructor(public dialogService: DialogService) {
+  constructor(public dialogService: DialogService, private tokenService: TokenService) {
   }
 
   ngOnInit() {
@@ -21,11 +22,13 @@ export class NavigateComponent implements OnInit {
     this.dialogService.addDialog(LoginComponent, {title: 'Login', message: ''}).subscribe((isConfirmed) => {
       if (isConfirmed) {
         this.logflag = true;
+        this.tokenService.setLoginFlag(true);
       }
     });
   }
 
   logout() {
     this.logflag = false;
+    this.tokenService.setLoginFlag(false);
   }
 }
