@@ -29,6 +29,8 @@ killPort()
 		kill  -9  $pid;
 	fi
 }
+//删除原来打包
+rm -rf $PROJ_PATH/BaseLineUI/dist/*
 
 cd $PROJ_PATH/BaseLineUI
 echo "$PROJ_PATH"
