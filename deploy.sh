@@ -30,7 +30,7 @@ killPort()
 	fi
 }
 //删除原来打包
-rm -rf $PROJ_PATH/BaseLineUI/dist/*
+rm -rf $WORK_PATH/html/BaseLine/
 
 cd $PROJ_PATH/BaseLineUI
 echo "$PROJ_PATH"
